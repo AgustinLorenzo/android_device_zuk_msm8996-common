@@ -44,6 +44,9 @@ TARGET_SCREEN_WIDTH := 1080
 # HWUI overrides
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
+# Dalvik overrides
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
