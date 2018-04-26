@@ -163,3 +163,8 @@ persist.delta_time.enable=true
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Higher fling velocities
+# for smoother scrolling and better responsiveness
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
