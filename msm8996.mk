@@ -86,6 +86,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Additional native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -195,14 +199,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
-PRODUCT_PACKAGES += \
-    mkshrc_vendor \
-    sh_vendor \
-    toybox_vendor
-
-PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -212,7 +208,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-# GPS
+# GPS / Location
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \
     android.hardware.gnss@1.0-service-qti \
