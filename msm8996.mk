@@ -258,6 +258,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# IRQ Balancing
+PRODUCT_COPY_FILES += \
+    device/zuk/msm8996-common/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
