@@ -32,7 +32,6 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 	private static final String ENABLE_BATTERY_MODE = "battery_mode";
 	private static final String BATTERY_SYSTEM_PROPERTY = "persist.battery.save";
 
-	private SwitchPreference mEnableQC;
 	private SwitchPreference mBatterySave;
 
     private Context mContext;
