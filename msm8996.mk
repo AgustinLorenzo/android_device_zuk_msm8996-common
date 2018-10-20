@@ -395,7 +395,6 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-<<<<<<< HEAD
     android.hardware.biometrics.fingerprint@2.1-service \
     ZukPocketMode
 
