@@ -13,6 +13,12 @@
             android:summary="@string/battery_summary" />
 
         <SwitchPreference
+            android:key="experimental_battery_mode"
+            android:defaultValue="false"
+            android:title="@string/exp_battery_title"
+            android:summary="@string/exp_battery_summary" />
+
+        <SwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"

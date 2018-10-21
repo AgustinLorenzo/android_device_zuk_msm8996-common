@@ -1,1 +1,2 @@
 persist.battery.save               u:object_r:system_prop:s0
+persist.experimental.battery.save  u:object_r:system_prop:s0

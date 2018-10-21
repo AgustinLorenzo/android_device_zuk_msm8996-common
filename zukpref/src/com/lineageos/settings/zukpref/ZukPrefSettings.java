@@ -32,7 +32,11 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 	private static final String ENABLE_BATTERY_MODE = "battery_mode";
 	private static final String BATTERY_SYSTEM_PROPERTY = "persist.battery.save";
 
+	private static final String ENABLE_EXP_BATTERY_MODE = "experimental_battery_mode";
+	private static final String EXP_BATTERY_SYSTEM_PROPERTY = "persist.experimental.battery.save";
+
 	private SwitchPreference mBatterySave;
+    private SwitchPreference mExpBatterySave;
 
     private Context mContext;
     private SharedPreferences mPreferences;
@@ -47,6 +51,10 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
         mBatterySave = (SwitchPreference) findPreference(ENABLE_BATTERY_MODE);
         mBatterySave.setChecked(SystemProperties.getBoolean(BATTERY_SYSTEM_PROPERTY, true));
         mBatterySave.setOnPreferenceChangeListener(this);
+		
+        mExpBatterySave = (SwitchPreference) findPreference(ENABLE_EXP_BATTERY_MODE);
+        mExpBatterySave.setChecked(SystemProperties.getBoolean(EXP_BATTERY_SYSTEM_PROPERTY, true));
+        mExpBatterySave.setOnPreferenceChangeListener(this);
 			
         }
 	// Control BatterySave
@@ -57,6 +65,16 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 			SystemProperties.set(BATTERY_SYSTEM_PROPERTY, "0");
 		}
     }
+
+    // Control Experimental BatterySave
+    private void setExpBatterySave(boolean value) {
+		if(value) {
+			SystemProperties.set(EXP_BATTERY_SYSTEM_PROPERTY, "1");
+		} else {
+			SystemProperties.set(EXP_BATTERY_SYSTEM_PROPERTY, "0");
+		}
+    }
+	
     @Override
     protected void onResume() {
         super.onResume();
@@ -81,7 +99,13 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 			mBatterySave.setChecked(value);
 			setBatterySave(value);
 			return true;
-	}
+	    } else if (ENABLE_EXP_BATTERY_MODE.equals(key)) {
+			value = (Boolean) newValue;
+			mExpBatterySave.setChecked(value);
+			setExpBatterySave(value);
+			return true;
+		}
+
       	return false;
     }
 

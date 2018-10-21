@@ -20,6 +20,9 @@
     <string name="battery_title">Modo Antutu</string>
     <string name="battery_summary">Activar/desactivar el modo de rendimiento para Antutu, no recomendado para uso diario</string>
 
+    <string name="exp_battery_title">AutoSMP Hotplug</string>
+    <string name="exp_battery_summary">Activa/desactiva AutoSMP hotplug (Ayuda con el drain de bateria de Whatsapp Web en 2º plano)</string>
+
     <!-- Info de carga  -->
     <string name="lockscreen_battery_info_title">Informacion de carga</string>
 </resources>
