@@ -24,5 +24,11 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
+        <SwitchPreference
+            android:key="software_buttons"
+            android:defaultValue="true"
+            android:title="@string/software_buttons_title"
+            android:summary="@string/software_buttons_summary" />
+
   </PreferenceCategory>
 </PreferenceScreen>

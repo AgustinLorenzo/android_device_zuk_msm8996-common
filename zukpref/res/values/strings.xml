@@ -21,6 +21,9 @@
     <string name="exp_battery_title">AutoSMP Hotplug</string>
     <string name="exp_battery_summary">Enable/disable AutoSMP hotplug (Help with the battery drain of the Whatsapp Web in background)</string>
 
+    <string name="software_buttons_title">Software Buttons</string>
+    <string name="software_buttons_summary">Enable/disable software buttons, needs reboot for apply this change.</string>
+
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>

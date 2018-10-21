@@ -22,6 +22,9 @@
 
     <string name="exp_battery_title">AutoSMP Hotplug</string>
     <string name="exp_battery_summary">Activa/desactiva AutoSMP hotplug (Ayuda con el drain de bateria de Whatsapp Web en 2º plano)</string>
+	
+    <string name="software_buttons_title">Botones Software</string>
+    <string name="software_buttons_summary">Activa/desactiva los botones software, es necesario reiniciar el movil para aplicar este cambio.</string>
 
     <!-- Info de carga  -->
     <string name="lockscreen_battery_info_title">Informacion de carga</string>

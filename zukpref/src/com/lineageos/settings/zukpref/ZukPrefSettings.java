@@ -35,8 +35,12 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 	private static final String ENABLE_EXP_BATTERY_MODE = "experimental_battery_mode";
 	private static final String EXP_BATTERY_SYSTEM_PROPERTY = "persist.experimental.battery.save";
 
+	private static final String ENABLE_SOFTWARE_BUTTONS = "software_buttons";
+	private static final String SOFTWARE_BUTTONS_PROPERTY = "qemu.hw.mainkeys";
+
 	private SwitchPreference mBatterySave;
     private SwitchPreference mExpBatterySave;
+	private SwitchPreference mSoftwareButtons;
 
     private Context mContext;
     private SharedPreferences mPreferences;
@@ -55,7 +59,11 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
         mExpBatterySave = (SwitchPreference) findPreference(ENABLE_EXP_BATTERY_MODE);
         mExpBatterySave.setChecked(SystemProperties.getBoolean(EXP_BATTERY_SYSTEM_PROPERTY, true));
         mExpBatterySave.setOnPreferenceChangeListener(this);
-			
+
+        mSoftwareButtons = (SwitchPreference) findPreference(ENABLE_SOFTWARE_BUTTONS);
+        mSoftwareButtons.setChecked(SystemProperties.getBoolean(SOFTWARE_BUTTONS_PROPERTY, true));
+        mSoftwareButtons.setOnPreferenceChangeListener(this);
+		
         }
 	// Control BatterySave
     private void setBatterySave(boolean value) {
@@ -72,6 +80,15 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 			SystemProperties.set(EXP_BATTERY_SYSTEM_PROPERTY, "1");
 		} else {
 			SystemProperties.set(EXP_BATTERY_SYSTEM_PROPERTY, "0");
+		}
+    }
+	
+    // Control Hardware Buttons
+    private void setSoftwareButtons(boolean value) {
+		if(value) {
+			SystemProperties.set(SOFTWARE_BUTTONS_PROPERTY, "1");
+		} else {
+			SystemProperties.set(SOFTWARE_BUTTONS_PROPERTY, "0");
 		}
     }
 	
@@ -103,6 +120,11 @@ public class ZukPrefSettings extends PreferenceActivity implements OnPreferenceC
 			value = (Boolean) newValue;
 			mExpBatterySave.setChecked(value);
 			setExpBatterySave(value);
+			return true;
+		} else if (ENABLE_SOFTWARE_BUTTONS.equals(key)) {
+			value = (Boolean) newValue;
+			mSoftwareButtons.setChecked(value);
+			setSoftwareButtons(value);
 			return true;
 		}
 
